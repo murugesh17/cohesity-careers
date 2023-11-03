@@ -1,13 +1,13 @@
 export default async function CtaButtons({
-  params,
+  btndata,
 }: {
-  params: { key: string }
+  btndata: any
 }) {
   let btnTxt = 'Learn more';
   let btnUrl;
   let btnStyle = 'default';
-  params &&
-  params.map((item) => {
+  btndata &&
+  btndata.map((item:any) => {
     item.key === 'Text' ? 
       btnTxt = item.value 
       : item.key === 'URL' ? 

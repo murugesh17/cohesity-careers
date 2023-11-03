@@ -53,7 +53,7 @@ export default async function TwocolumnCarousel({
                     <h3>{post.subheading}</h3>
                     <p>{post.description}</p>
                     <div className="btn-wrap">
-                      <CtaButtons params={post.carouselButtons}/>
+                      <CtaButtons btndata={post.carouselButtons}/>
                     </div>
                   </div>
                 </div>
