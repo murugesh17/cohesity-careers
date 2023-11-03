@@ -5,7 +5,7 @@ import MoreStories from '../../more-stories'
 import Avatar from '../../avatar'
 import Date from '../../date'
 import CoverImage from '../../cover-image'
-import Herobanner from '../../components/herobanner'
+//import Herobanner from '../../components/herobanner'
 import Footer from '../../components/footer'
 
 import { Markdown } from '@/lib/markdown'
@@ -29,7 +29,7 @@ export default async function PostPage({
 
   return (
     <div className="container mx-auto px-5">
-      <Herobanner sysid={"lifeatcohesity-herobanner"} />
+      {/*<Herobanner sysid={"lifeatcohesity-herobanner"} />*/}
       <article>
         <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
           {post.title}
