@@ -118,3 +118,31 @@ export async function getPostAndMorePosts(
     morePosts: extractPostEntries(entries),
   }
 }
+
+export async function getHeroBanner(slug: string): Promise<any> {
+  const entry = await fetchGraphQL(
+    `query {
+      postCollection(where: { slug: "${slug}" }) {
+        items {
+          ${POST_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    true
+  )
+  return extractPost(entry)
+}
+
+export async function getFooter(): Promise<any> {
+  const entry = await fetchGraphQL(
+    `query {
+      postCollection(where: { slug: "homepage-herobanner" }) {
+        items {
+          ${POST_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    true
+  )
+  return extractPost(entry)
+}
