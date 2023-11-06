@@ -25,7 +25,7 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
           }`,
       },
       body: JSON.stringify({ query }),
-      next: { revalidate: 5 },
+      next: { revalidate: 1 },
     }
   ).then((response) => response.json())
 }
