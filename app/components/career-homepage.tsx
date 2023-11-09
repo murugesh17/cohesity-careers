@@ -9,8 +9,10 @@ import TwocolumnCarousel from './twocolumn-carousel'
 
 export default async function CareerHomepage({
   slug,
+  lang,
 }: {
-  slug: string
+  slug: string,
+  lang: string
 }) {
   const post = await getHomeContents(slug)
   const topSection = post.topSectionCollection.items;
@@ -28,7 +30,7 @@ export default async function CareerHomepage({
                 </>
               ) : item.__typename === 'TwoColumnCarousel' ? (
                 <>
-                  <TwocolumnCarousel key={item.sys.id} sysid={item.sys.id} />
+                  <TwocolumnCarousel key={item.sys.id} sysid={item.sys.id} lang={lang}/>
                 </>
               ) : (
                 <>

@@ -34,10 +34,10 @@ function extractPost(fetchResponse: any): any {
   return fetchResponse?.data?.twoColumnCarouselCollection?.items?.[0]
 }
 
-export async function getCarouselContents(sysid: string): Promise<any> {
+export async function getCarouselContents(sysid: string, lang: string): Promise<any> {
   const entry = await fetchGraphQL(
     `query {
-      twoColumnCarouselCollection(where: { 
+      twoColumnCarouselCollection(locale: "${lang}", where: { 
         sys: {
           id: "${sysid}"
         }

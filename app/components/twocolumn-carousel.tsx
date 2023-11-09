@@ -8,10 +8,12 @@ import CtaButtons from './cta-buttons'
 
 export default async function TwocolumnCarousel({
   sysid,
+  lang,
 }: {
   sysid: string
+  lang: string
 }) {
-  const post = await getCarouselContents(sysid)
+  const post = await getCarouselContents(sysid, lang)
   //console.log(post.carouselButtons)
   return (
     post.theme === 'Image with Video' ? (
