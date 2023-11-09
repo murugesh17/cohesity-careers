@@ -1,12 +1,12 @@
 import CareerHomepage from './components/career-homepage'
 
-import { CMS_NAME, CMS_URL } from '@/lib/constants'
+import { LANG_EN } from '@/lib/constants'
 
 export default async function Page() {
 
   return (
     <>
-      <CareerHomepage slug={"career-home"} lang={"en-US"}/>
+      <CareerHomepage slug={"career-home"} lang={LANG_EN}/>
     </>
   )
 }

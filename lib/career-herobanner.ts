@@ -1,3 +1,5 @@
+import { NXT_REVALIDATE} from '@/lib/constants'
+
 const POST_GRAPHQL_FIELDS = `
   slug
   heading
@@ -37,7 +39,7 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
           }`,
       },
       body: JSON.stringify({ query }),
-      next: { revalidate: 1 },
+      next: { revalidate: NXT_REVALIDATE },
     }
   ).then((response) => response.json())
 }
@@ -46,10 +48,10 @@ function extractPost(fetchResponse: any): any {
   return fetchResponse?.data?.careerHerobannerCollection?.items?.[0]
 }
 
-export async function getHeroBanner(sysid: string): Promise<any> {
+export async function getHeroBanner(sysid: string, lang: string): Promise<any> {
   const entry = await fetchGraphQL(
     `query {
-      careerHerobannerCollection(where: { 
+      careerHerobannerCollection(locale: "${lang}", where: { 
         sys: {
           id: "${sysid}"
         }

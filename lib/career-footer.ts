@@ -1,3 +1,5 @@
+import { NXT_REVALIDATE} from '@/lib/constants'
+
 const POST_GRAPHQL_FIELDS = `
   slug
   heading
@@ -31,7 +33,7 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
           }`,
       },
       body: JSON.stringify({ query }),
-      next: { revalidate: 1 },
+      next: { revalidate: NXT_REVALIDATE },
     }
   ).then((response) => response.json())
 }

@@ -7,10 +7,12 @@ import { CMS_NAME, CMS_URL } from '@/lib/constants'
 
 export default async function Herobanner({
   sysid,
+  lang,
 }: {
-  sysid: string
+  sysid: string,
+  lang: string,
 }) {
-  const post = await getHeroBanner(sysid)
+  const post = await getHeroBanner(sysid, lang)
 
   return (
     <section className='hero-banner career-theme bg-white text-white'>

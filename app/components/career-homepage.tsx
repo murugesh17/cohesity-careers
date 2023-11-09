@@ -26,7 +26,7 @@ export default async function CareerHomepage({
             return (
               item.__typename === 'CareerHerobanner' ? (
                 <>
-                  <Herobanner key={item.sys.id} sysid={item.sys.id} />
+                  <Herobanner key={item.sys.id} sysid={item.sys.id} lang={lang}/>
                 </>
               ) : item.__typename === 'TwoColumnCarousel' ? (
                 <>
